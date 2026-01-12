@@ -20,12 +20,33 @@ fs.createReadStream(filePath)
     console.log(row);
   });
 
-async function getOriginalCSV(url) {
-  
+async function analyse(url) {
+
     const Request = await fetch(url);
     const Data = await Request.text();
 
-    Data.forEach((e) => console.log(e));
-    console.log("analyse en cours...")
-}
-getOriginalCSV("/Data/OriginalCollection.csv");
+    const GameArray = Data.split("\n")
+
+    GameArray.forEach(Game => {
+        Game = Game.split(";");
+
+        let prix = Game[6].toLowerCase()
+        let date = Game[3].toLowerCase()
+        let state = Game[4].toLowerCase()
+        if(
+          prix != "" &&
+          date != "" &&
+          state != "Excellent" &&
+          state != "Bon" &&
+          state != "Moyen" &&
+          state != "Mauvais" 
+          
+          ) {
+            return True
+
+       } 
+      }
+    )
+  };
+
+       analyse("/Data/OriginalCollection.csv");
