@@ -9,7 +9,7 @@ if Etats isset Excellent, Bon, Moyen, Mauvais alors return true
 
 */
 
-const csv = require('csv-parser');
+const csv = require('Data/OriginalCollection.csv');
 const fs = require('fs');
 
 const filePath = 'data.csv';
