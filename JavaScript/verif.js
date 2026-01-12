@@ -8,14 +8,15 @@ si prix ==  "€" alors return true
 if Etats isset Excellent, Bon, Moyen, Mauvais alors return true
 
 */
+async function analyse(url) {
 
-const csv = require('Data/OriginalCollection.csv');
-const fs = require('fs');
+    const Request = await fetch(url);
+    const Data = await Request.text();
 
-const filePath = 'data.csv';
+    Data.forEach((e) => console.log(e));
+    console.log("analyse en cours...")
+}
 
-fs.createReadStream(filePath)
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  });
+
+
+analyse("/Data/OriginalCollection.csv");
