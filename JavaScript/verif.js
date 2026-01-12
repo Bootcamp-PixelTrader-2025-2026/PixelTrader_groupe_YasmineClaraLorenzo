@@ -9,17 +9,6 @@ if Etats isset Excellent, Bon, Moyen, Mauvais alors return true
 
 */
 
-const csv = require('csv-parser');
-const fs = require('fs');
-
-const filePath = 'Data/OriginalCollection.csv';
-
-fs.createReadStream(filePath)
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  });
-
 async function analyse(url) {
 
     const Request = await fetch(url);
