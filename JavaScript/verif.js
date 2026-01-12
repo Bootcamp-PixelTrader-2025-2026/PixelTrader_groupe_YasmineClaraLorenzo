@@ -19,21 +19,20 @@ async function analyse(url) {
     GameArray.forEach(Game => {
         Game = Game.split(";");
 
-        let prix = Game[6].toLowerCase()
-        let date = Game[3].toLowerCase()
-        let state = Game[4].toLowerCase()
-        if(
-          prix != "" &&
-          date != "" &&
-          state != "Excellent" &&
-          state != "Bon" &&
-          state != "Moyen" &&
-          state != "Mauvais" 
-          
-          ) {
-            return True
+        let prix = Game[6]
+        let date = Game[3]
+        let state = Game[4]
+      
+      if ( prix != "" &&
+      date != "" &&
+      state != "Excellent" &&
+      state != "Bon" &&
+      state != "Moyen" &&
+      state != "Mauvais" ){
+        console.log("Résultat de l'analyse : True")
+      }
 
-       } 
+      console.log("Résultat de l'analyse : False")
       }
     )
   };
