@@ -1,11 +1,34 @@
 const apiBase = "https://v6.exchangerate-api.com/v6/";
 const apiKey = "08db352af22a4bed96682556";
 
-async function Convert(montant, ApiDevise) {
-    let request = await fetch(apiBase + apiKey + "/latest/" + ApiDevise);
-    let data = await request.json();
-    let montantObtenu = montant * data.conversion_rates["EUR"];
+let yenConversionRate
+let dollarConversionRate
+
+async function Cleaning() {
+    let requestYen = await fetch(apiBase + apiKey + "/latest/JPY");
+    let dataYen = await requestYen.json();
+    yenConversionRate = dataYen.conversion_rates["EUR"]
+    // console.log(yenConversionRate);
+
+    let requestDollar = await fetch(apiBase + apiKey + "/latest/USD");
+    let dataDollar = await requestDollar.json();
+    dollarConversionRate = dataDollar.conversion_rates["EUR"]
+    // console.log(dollarConversionRate);
+
+    getOriginalCSV("/Data/OriginalCollection.csv");
+}
+
+function Convert(montant, devise) {
+
+    let montantObtenu = 0;
+    if (devise === "¥") {
+        montantObtenu = montant * yenConversionRate;
+    } else if (devise === "$") {
+        montantObtenu = montant * dollarConversionRate;
+    }
+    montantObtenu = Number(montantObtenu.toFixed(2));
     return montantObtenu;
+
 }
 
 async function getOriginalCSV(url) {
@@ -79,20 +102,19 @@ async function getOriginalCSV(url) {
             Game[6] = montant + " " + devise; 
         } else if (
            devise === "¥" || devise === "YEN"){
-            ApiDevise = "JPY"
-            devise = "€"
-            montant = await Convert(montant, ApiDevise);
-            Game[6] = montant + " " + devise; 
+            devise = "¥"
+            montant = Convert(montant, devise);
+            Game[6] = montant + " " + "€"; 
         } else if (
            devise === "$" || devise === "DOLLARS"){
             devise = "$"
-            ApiDevise = "USD"
-            Game[6] = montant + " " + devise; 
+            montant = Convert(montant, devise);
+            Game[6] = montant + " " + "€"; 
         } else {
             console.log("Error :", Game[0], "has an invalid value", Game[6])
         }
 
-        console.log(Game[6]);
+        // console.log(Game[6]);
 
 
 
@@ -133,4 +155,4 @@ async function getOriginalCSV(url) {
     });
 }
 
-getOriginalCSV("/Data/OriginalCollection.csv");
+Cleaning();
