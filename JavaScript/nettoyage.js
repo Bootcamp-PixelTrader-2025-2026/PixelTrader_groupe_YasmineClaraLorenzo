@@ -1,3 +1,13 @@
+const apiBase = "https://v6.exchangerate-api.com/v6/";
+const apiKey = "08db352af22a4bed96682556";
+
+async function Convert(montant, ApiDevise) {
+    let request = await fetch(apiBase + apiKey + "/latest/" + ApiDevise);
+    let data = await request.json();
+    let montantObtenu = montant * data.conversion_rates["EUR"];
+    return montantObtenu;
+}
+
 async function getOriginalCSV(url) {
 
     const Request = await fetch(url);
@@ -39,34 +49,76 @@ async function getOriginalCSV(url) {
             console.log("Error :", Game[0], "has an invalid state", Game[4])
         }
 
+        // console.log(Game[4]);
 
+
+        // gestion des valeures estimées
+        let valeur = Game[6].trim();
+        let match = valeur.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
+
+        let montant = 0;
+        let devise = "€";
+        let ApiDevise = "EUR";
+
+
+        if (match) {
+            montant = match[1];
+            devise = match[2] || "€";
+        } else if (valeur === "NULL" || valeur == "") {
+            montant = 0;
+            devise = "€";
+        } else {
+            console.log("Error :", Game[0], "has an invalid value", Game[6]);
+        }
         
 
-        let valeur = Game[6].split(" ");
-        let montant = valeur[0];
-        let devise = valeur[1];
-
         if(
-           devise == "€" || devise == "EUR" || devise == "euros" || devise === null || devise === undefined) {
+           devise == "€" || devise === "EUR" || devise === "euros" || devise === null || devise === undefined) {
             devise = "€"
+            ApiDevise = "EUR"
             Game[6] = montant + " " + devise; 
         } else if (
-           devise == "¥" || devise == "YEN"){
-            devise = "¥"
+           devise === "¥" || devise === "YEN"){
+            ApiDevise = "JPY"
+            devise = "€"
+            montant = await Convert(montant, ApiDevise);
             Game[6] = montant + " " + devise; 
         } else if (
-           devise == "$" || devise == "DOLLARS"){
+           devise === "$" || devise === "DOLLARS"){
             devise = "$"
+            ApiDevise = "USD"
             Game[6] = montant + " " + devise; 
         } else {
-            // console.log(Game[6])
-            // console.log("Error :", Game[0], "has an invalid value", Game[6])
+            console.log("Error :", Game[0], "has an invalid value", Game[6])
         }
 
-        valeur = Game[6].split(" ");
-        montant = valeur[0];
-        devise = valeur[1];
-        console.log(montant);
+        console.log(Game[6]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // console.log("##################################");
         // console.log("id :", Game[0])
