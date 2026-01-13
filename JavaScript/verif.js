@@ -15,37 +15,36 @@ async function analyse(url) {
     const Data = await Request.text();
 
     const GameArray = Data.split("\n")
-    let resultat = false
+   
+    let resultat = true;
 
     GameArray.forEach(Game => {
         Game = Game.split(";");
 
         let prix = Game[6]
         let date = Game[3]
-        let state = Game[4]
+        let state = Game[4] 
+
+        if ( prix == "" )
+          {resultat= false,console.log("prix invalide")}
+
+        if (date == "" )
+          {resultat= false,console.log("date invalide :", Game[3])}
+
+        if (state != "Excellent" && 
+            state != "Bon" &&
+            state != "Moyen" &&
+            state != "Mauvais" )
+        {resultat= false, console.log("Etat invalide :", Game[4]) }
       
-     if ( prix != "" ){console.log("prix rempli")}
-        if (date != "" ){console.log("date rempli")}
-        if (state == "Excellent" ){console.log("Etat bien écrit")}
-        if (state == "Bon" ){console.log("Etat bien écrit")}
-        if (state == "Moyen"){console.log("Etat bien écrit")}
-      if (state == "Mauvais" ){console.log("Etat bien écrit")}
-        return resultat = true;
+    });
       
+    console.log("------------------------------------------");
+    console.log("Résultat final de l'analyse :", resultat);
+    console.log("------------------------------------------");
+    
+    return resultat;
+};
 
+analyse("/Data/OriginalCollection.csv");
 
-  /*    if ( prix != "" &&
-          date != "" &&
-          state != "Excellent" &&
-          state != "Bon" &&
-          state != "Moyen" &&
-          state != "Mauvais" ){
-        return resultat = true;
-      }*/
-
-      console.log("Résultat de l'analyse :", resultat)
-      }
-    )
-  };
-
-       analyse("/Data/OriginalCollection.csv");
