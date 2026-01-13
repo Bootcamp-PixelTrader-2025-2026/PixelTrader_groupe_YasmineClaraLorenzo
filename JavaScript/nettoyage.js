@@ -58,7 +58,7 @@ async function getOriginalCSV(url) {
             Game[4] = "Mauvais";
         }
 
-        const plateforme = Game[4].toLowerCase();
+        const plateforme = Game[2];
         if (["PlayStation 1","PlayStation"].includes(plateforme)) {
             Game[2] = "PS1";
 
