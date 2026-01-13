@@ -1,6 +1,28 @@
-const fs = require('fs')
-var Document = fs.readFileSync('stock_legacy_full.csv').toString().split('\r\n') //contient le csv sous forme de tableau
-var Columns = Document[0] //1er ligne du tab : intitulé des colonnes
-Columns = Columns.split(',')
+function exportJSON(data) {
+    // créat° d’un fichier temporaire (Blob) contenant les données en JSON
+    const blob = new Blob(
+        [JSON.stringify(data, null, 2)],//data=donné a convertir et 2 pour l'indentation pour que ce soit jolie
+        { type: "application/json" }
+    );
 
-var Json = []
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);//url temporaire
+    a.download = "clean_data.json"; // nom  fichier lors du telechrgmt
+    a.click();
+}
+
+function exportCSV(data) {
+    const headers = Object.keys(data[0]).join(";");// récup les noms des colonnes en utilisant les propriétés du premier objet de données(id)
+    const rows = data.map(obj =>//chaque obj en ligne csv
+        Object.values(obj).join(";")
+    );
+
+    //assemble le fichier csv ->1ere ligne : headers et autre lignes données
+    const csvContent = [headers, ...rows].join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "clean_data.csv";
+    a.click();// declenche autom le téléchargement
+}

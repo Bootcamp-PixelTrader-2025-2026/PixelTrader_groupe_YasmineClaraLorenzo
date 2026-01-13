@@ -83,8 +83,8 @@ async function getOriginalCSV(url) {
 
         Game[7] = montantAchat.toFixed(2) + " €";
 
-        /*si val estimé absente on ^prend prix achat */
-        if (montant === 0) Game[6] = Game[7];
+        /*si val estimé absente on prend prix achat */
+        if (montant === 0 ||montant === undefined) Game[6] = Game[7];
 
         cleanGames.push({
             id: Number(Game[0]),
