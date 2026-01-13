@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Reset / base CSS -->
-    <link rel="stylesheet" href="CSS/destyle.css">
+    <link rel="stylesheet" href="/CSS/destyle.css">
+    <link rel="stylesheet" href="/CSS/variable.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/homePage.css">
 
     <title>PixelTrader – Nettoyage CSV</title>
 </head>
 <body>
+    <header>
+        <h1>PixelTrader</h1>
+    </header>
 
-    <h1>PixelTrader – Nettoyage des données</h1>
+    <main>
+        <h2>Nettoyage des données</h2>
+        <!-- Bouton pour lancer le nettoyage -->
+        <button onclick="Cleaning()">Nettoyer & exporter les données</button>
+    </main>
+    <footer>
 
-    <!-- Bouton pour lancer le nettoyage -->
-    <button onclick="Cleaning()">Nettoyer & exporter les données</button>
-
+    </footer>
+</body>
     <!-- Scripts JS -->
     <script src="JavaScript/export.js"></script>
     <script src="JavaScript/nettoyage.js"></script>
-
-</body>
 </html>
