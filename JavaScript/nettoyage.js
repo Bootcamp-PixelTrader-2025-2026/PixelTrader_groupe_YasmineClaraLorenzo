@@ -60,7 +60,6 @@ async function getOriginalCSV(url) {
 
         /*valeur*/
         let valeur = Game[6] || "";
-        let match = valeur.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
 
         let montant = match ? Number(match[1]) : 0;
         let devise = match ? (match[2] || "€") : "€";
@@ -75,16 +74,20 @@ async function getOriginalCSV(url) {
         let achat = Game[7] || "";
         let matchAchat = achat.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
 
-        let montantAchat = matchAchat ? Number(matchAchat[1]) : 0;
+        // si le prix d’achat correspond au format "nombre + devise",
+        // on recup le montant  et la devise sinon on met 0 par défaut
+        let montantAchat = matchAchat ? Number(matchAchat[1]) : 0; 
         let deviseAchat = matchAchat ? (matchAchat[2] || "€") : "€";
 
         if (["¥","YEN"].includes(deviseAchat)) montantAchat = Convert(montantAchat,"¥");
         if (["$","DOLLARS"].includes(deviseAchat)) montantAchat = Convert(montantAchat,"$");
 
         Game[7] = montantAchat.toFixed(2) + " €";
-
+/*qd poubelle suprime*/
+/*FAIRE DES FONCTION S2PAré plutot que tout en foreach*/
+/*uniformiser le nom des plateforme n64->nintendo64 etc
         /*si val estimé absente on prend prix achat */
-        if (montant === 0 ||montant === undefined) Game[6] = Game[7];
+        if (montant === 0) Game[6] = Game[7];
 
         cleanGames.push({
             id: Number(Game[0]),
