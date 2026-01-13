@@ -58,6 +58,32 @@ async function getOriginalCSV(url) {
             Game[4] = "Mauvais";
         }
 
+        const plateforme = Game[4].toLowerCase();
+        if (["PlayStation 1","PlayStation"].includes(plateforme)) {
+            Game[2] = "PS1";
+
+        } else if (["Game Boy Advance"].includes(plateforme)) {
+            Game[2] = "GBA";
+
+        } else if (plateforme == "Game Boy") {
+            Game[2] = "GB";
+
+        } else if (plateforme == "GameCube") {
+            Game[2] = "GCN";
+
+        } else if (plateforme == "Nintendo 64") {
+            Game[2] = "N64";
+
+        } else if (plateforme == "Super Nintendo") {
+            Game[2] = "SNES";
+        
+        } else if (plateforme == "Gameboy Color") {
+            Game[2] = "GC";
+
+        } else if (plateforme == "PlayStation 2") {
+            Game[2] = "PS2";
+        }
+
         /*valeur*/
         let valeur = Game[6] || "";
         let match = valeur.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
