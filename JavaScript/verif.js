@@ -15,6 +15,7 @@ async function analyse(url) {
     const Data = await Request.text();
 
     const GameArray = Data.split("\n")
+    let resultat = false
 
     GameArray.forEach(Game => {
         Game = Game.split(";");
@@ -23,16 +24,26 @@ async function analyse(url) {
         let date = Game[3]
         let state = Game[4]
       
-      if ( prix != "" &&
-      date != "" &&
-      state != "Excellent" &&
-      state != "Bon" &&
-      state != "Moyen" &&
-      state != "Mauvais" ){
-        console.log("Résultat de l'analyse : True")
-      }
+     if ( prix != "" ){console.log("prix rempli")}
+        if (date != "" ){console.log("date rempli")}
+        if (state == "Excellent" ){console.log("Etat bien écrit")}
+        if (state == "Bon" ){console.log("Etat bien écrit")}
+        if (state == "Moyen"){console.log("Etat bien écrit")}
+      if (state == "Mauvais" ){console.log("Etat bien écrit")}
+        return resultat = true;
+      
 
-      console.log("Résultat de l'analyse : False")
+
+  /*    if ( prix != "" &&
+          date != "" &&
+          state != "Excellent" &&
+          state != "Bon" &&
+          state != "Moyen" &&
+          state != "Mauvais" ){
+        return resultat = true;
+      }*/
+
+      console.log("Résultat de l'analyse :", resultat)
       }
     )
   };
