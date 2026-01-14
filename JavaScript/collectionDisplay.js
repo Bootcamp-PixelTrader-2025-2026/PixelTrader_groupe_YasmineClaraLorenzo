@@ -27,4 +27,3 @@ function displayCollection (collection) {
         </div>`
     });
 }
-

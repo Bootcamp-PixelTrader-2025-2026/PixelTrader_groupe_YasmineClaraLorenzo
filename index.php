@@ -1,3 +1,7 @@
+<?php 
+include 'Api/index.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,7 +31,11 @@
         <section>
             <h2>Notre Collection</h2>
             <div id="collectionWelcomer">
-                
+                <?php
+                 if($collection) {
+                    var_dump($collection);
+                 }
+                ?>
             </div>
         </section>
     </main>
