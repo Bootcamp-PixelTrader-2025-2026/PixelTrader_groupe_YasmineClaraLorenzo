@@ -1,0 +1,13 @@
+button {
+    padding: 1rem;
+    background-color: var(--retroBlue);
+    border: 0.3rem solid var(--retroBlue);
+    border-radius: 1.5rem;
+    color: var(--white);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--black);
+}
