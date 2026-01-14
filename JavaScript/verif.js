@@ -46,5 +46,5 @@ async function analyse(url) {
     return resultat;
 };
 
-analyse("/Data/OriginalCollection.csv");
+analyse("/Data/clean_data.csv");
 
