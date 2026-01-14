@@ -19,12 +19,14 @@ async function analyse(url) {
     let resultat = true;
 
     GameArray.forEach(Game => {
+
         Game = Game.split(";");
+        if (Game[0] === "id" || Game.length < 8) return;
 
         let prix = Game[6]
         let date = Game[3]
         let state = Game[4] 
-
+        
         if ( prix == "" )
           {resultat= false,console.log("prix invalide")}
 
