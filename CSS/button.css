@@ -9,5 +9,5 @@ button {
 }
 
 button:hover {
-    border: 0.3rem solid var(--white);
+    background-color: var(--black);
 }
