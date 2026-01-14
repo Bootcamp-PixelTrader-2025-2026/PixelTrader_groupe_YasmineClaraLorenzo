@@ -46,6 +46,8 @@ async function getOriginalCSV(url) {
         let Game = line.split(";").map(col => col.trim());
         if (Game[0] === "id" || Game.length < 8) return;
 
+        if (Game[5].toLowerCase() === "poubelle") return; //on saute la ligne si poubelle
+
         /*etat*/
         const state = Game[4].toLowerCase();
         if (["excellent","comme neuf","platinum","neuf","collector","mint","big box","blister","steelbook"].includes(state)) {
@@ -58,12 +60,30 @@ async function getOriginalCSV(url) {
             Game[4] = "Mauvais";
         }
 
+        /*function normalizeEtat(etat) {
+    const state = etat.toLowerCase();
+
+    if (["excellent","comme neuf","platinum","neuf","collector","mint","big box","blister","steelbook"].includes(state)) {
+        return "Excellent";
+    } 
+    else if (["bon","good","bon etat","jap"].includes(state)) {
+        return "Bon";
+    } 
+    else if (["moyen","boite abimée","sans notice","cabinet","boite manquante","sans boite","occasion","loose","boite","use","pile hs"].includes(state)) {
+        return "Moyen";
+    } 
+    else {
+        return "Mauvais";
+    }
+}
+*/
         /*valeur*/
         let valeur = Game[6] || "";
-        let match = valeur.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
+        const matchValeur = valeur.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
 
-        let montant = match ? Number(match[1]) : 0;
-        let devise = match ? (match[2] || "€") : "€";
+        let montant = matchValeur ? Number(matchValeur[1]) : 0;
+        let devise = matchValeur ? (matchValeur[2] || "€") : "€";
+
 
         //conversion
         if (["¥","YEN"].includes(devise)) montant = Convert(montant,"¥");
@@ -75,16 +95,20 @@ async function getOriginalCSV(url) {
         let achat = Game[7] || "";
         let matchAchat = achat.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
 
-        let montantAchat = matchAchat ? Number(matchAchat[1]) : 0;
+        // si le prix d’achat correspond au format "nombre + devise",
+        // on recup le montant  et la devise sinon on met 0 par défaut
+        let montantAchat = matchAchat ? Number(matchAchat[1]) : 0; 
         let deviseAchat = matchAchat ? (matchAchat[2] || "€") : "€";
 
         if (["¥","YEN"].includes(deviseAchat)) montantAchat = Convert(montantAchat,"¥");
         if (["$","DOLLARS"].includes(deviseAchat)) montantAchat = Convert(montantAchat,"$");
 
         Game[7] = montantAchat.toFixed(2) + " €";
-
+                /*FAIRE DES FONCTION S2PAré plutot que tout en foreach*/
         /*si val estimé absente on prend prix achat */
-        if (montant === 0 ||montant === undefined) Game[6] = Game[7];
+        if (montant === 0) Game[6] = Game[7];
+
+        Game[2] = normalizePlateforme(Game[2]);
 
         cleanGames.push({
             id: Number(Game[0]),
@@ -98,7 +122,40 @@ async function getOriginalCSV(url) {
         });
     });
 
+
     //export
     exportJSON(cleanGames);
     exportCSV(cleanGames);
+}
+
+//normalise les plateform
+function normalizePlateforme(plateforme) {
+    if (!plateforme) return "";
+
+    plateforme = plateforme.toLowerCase().trim();
+
+    const map = {
+        "n64": "Nintendo 64",
+        "nintendo 64": "Nintendo 64",
+        "nintendo64": "Nintendo 64",
+        "ps1": "PlayStation 1",
+        "playstation 1": "PlayStation 1",
+        "psx": "PlayStation 1",
+        "ps2": "PlayStation 2",
+        "playstation 2": "PlayStation 2",
+        "snes": "Super Nintendo",
+        "super nintendo": "Super Nintendo",
+        "nes": "NES",
+        "game boy": "Game Boy",
+        "gameboy": "Game Boy",
+        "gba": "Game Boy Advance",
+        "game boy advance": "Game Boy Advance",
+        "gc": "GameCube",
+        "gcn": "GameCube",
+        "gamecube": "GameCube",
+        "megadrive": "Sega Mega Drive",
+        "sega mega drive": "Sega Mega Drive"
+    };
+
+    return map[plateforme] || plateforme;
 }
