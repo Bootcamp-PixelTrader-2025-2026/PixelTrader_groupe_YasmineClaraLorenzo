@@ -1,0 +1,88 @@
+<?php
+$server = "localhost";
+$user = "root";
+$password = "";
+?>
+
+**** CREATION DES TABLES ****
+
+CREATE TABLE Jeu (
+    id_jeu int NOT NULL,
+    titre varchar(255),
+    plateforme varchar(255),
+    annee_sortie int NOT NULL,
+
+    PRIMARY KEY (id_jeu)
+);
+
+CREATE TABLE Stock (
+    id_jeu int NOT NULL,
+    etat varchar(255),
+    valeur_estime varchar(255),
+    emplacement varchar(255),
+    prix_achat int NOT NULL,
+    
+    FOREIGN KEY (id_jeu) REFERENCES Jeu(id_jeu)
+);
+
+****** TEST *******
+
+INSERT INTO Jeu (id_jeu,titre, plateforme, annee_sortie)
+VALUES (1,'Super Mario 64','N64',1996);
+
+INSERT INTO Stock (id_jeu,etat,valeur_estime,emplacement,prix_achat)
+VALUES (1,'Mint','Etagere A','50€','15€');
+
+
+INSERT INTO Jeu (id_jeu,titre, plateforme, annee_sortie)
+VALUES (2,'The Legend of Zelda: Ocarina of Time','N64',1998);
+
+INSERT INTO Stock (id_jeu,etat,valeur_estime,emplacement,prix_achat)
+VALUES (2,'Boite abimée','Etagere A','75€','20€');
+
+
+INSERT INTO Jeu (id_jeu,titre, plateforme, annee_sortie)
+VALUES (3,'Sonic The Hedgehog','Sega Mega Drive',1991);
+
+INSERT INTO Stock (id_jeu,etat,valeur_estime,emplacement,prix_achat)
+VALUES (3,'Good','Etagere B','30€','5€');
+
+
+********* CRUD *********
+
+Ajouter :
+
+
+  $sql = "INSERT INTO Stock (id_jeu,etat,valeur_estime,emplacement,prix_achat) VALUES (3,'Good','Etagere B','30€','5€')";
+
+  $stmt = $conn->prepare($sql);
+
+  $stmt->execute();
+
+  echo "Ajout réussi";
+
+
+Exemple Modifier:
+
+
+  $sql = "UPDATE Jeu SET titre='Mario' WHERE id_jeu = 3";
+
+  $stmt = $conn->prepare($sql);
+
+  $stmt->execute();
+
+  echo "Modification réussi";
+
+
+
+Supprimer des produits (Consoles, Jeux):
+
+
+  $sql = "DELETE FROM Stock WHERE id_jeu = 5";
+
+  $stmt = $conn->prepare($sql);
+
+  $stmt->execute();
+
+  echo "Supression réussi";
+
