@@ -1,0 +1,21 @@
+footer {
+    display: flex;
+    align-items: center;
+
+    padding: 2rem;
+
+    background-color: var(--retroBlue);
+    color: var(--white);
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+ul, li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
