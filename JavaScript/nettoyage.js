@@ -135,26 +135,71 @@ function normalizePlateforme(plateforme) {
     plateforme = plateforme.toLowerCase().trim();
 
     const map = {
-        "n64": "Nintendo 64",
-        "nintendo 64": "Nintendo 64",
-        "nintendo64": "Nintendo 64",
-        "ps1": "PlayStation 1",
-        "playstation 1": "PlayStation 1",
-        "psx": "PlayStation 1",
-        "ps2": "PlayStation 2",
-        "playstation 2": "PlayStation 2",
-        "snes": "Super Nintendo",
-        "super nintendo": "Super Nintendo",
-        "nes": "NES",
-        "game boy": "Game Boy",
-        "gameboy": "Game Boy",
-        "gba": "Game Boy Advance",
-        "game boy advance": "Game Boy Advance",
-        "gc": "GameCube",
-        "gcn": "GameCube",
-        "gamecube": "GameCube",
-        "megadrive": "Sega Mega Drive",
-        "sega mega drive": "Sega Mega Drive"
+            //Nintendo 64
+            "n64": "Nintendo 64",
+            "nintendo 64": "Nintendo 64",
+            "nintendo64": "Nintendo 64",
+
+            // PlayStation 1
+            "ps1": "PlayStation 1",
+            "psx": "PlayStation 1",
+            "playstation": "PlayStation 1",
+            "playstation 1": "PlayStation 1",
+
+            // PlayStation 2
+            "ps2": "PlayStation 2",
+            "playstation 2": "PlayStation 2",
+
+            // PlayStation 3
+            "ps3": "PlayStation 3",
+            "playstation 3": "PlayStation 3",
+
+            // Super Nintendo
+            "snes": "Super Nintendo",
+            "super nintendo": "Super Nintendo",
+            "super famicom": "Super Nintendo",
+
+            // NES
+            "nes": "NES",
+
+            // Game Boy
+            "game boy": "Game Boy",
+            "gameboy": "Game Boy",
+
+            // Game Boy Color
+            "gameboy color": "Game Boy Color",
+
+            // Game Boy Advance
+            "gba": "Game Boy Advance",
+            "game boy advance": "Game Boy Advance",
+
+            // GameCube
+            "gc": "GameCube",
+            "gcn": "GameCube",
+            "gamecube": "GameCube",
+
+            // Sega
+            "megadrive": "Sega Mega Drive",
+            "mega drive": "Sega Mega Drive",
+            "sega mega drive": "Sega Mega Drive",
+            "master system": "Sega Master System",
+            "dreamcast": "Dreamcast",
+            "saturn": "Saturn",
+
+            // Xbox
+            "xbox": "Xbox",
+
+            // PC
+            "pc": "PC",
+
+            // Arcade
+            "arcade": "Arcade",
+
+            // Switch
+            "switch": "Nintendo Switch",
+
+            // Atari
+            "atari 2600": "Atari 2600"
     };
 
     return map[plateforme] || plateforme;
