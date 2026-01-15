@@ -1,7 +1,3 @@
-<?php 
-include 'Api/index.php';
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,42 +10,79 @@ include 'Api/index.php';
     <link rel="stylesheet" href="/CSS/button.css">
     <link rel="stylesheet" href="/CSS/header.css">
     <link rel="stylesheet" href="/CSS/footer.css">
-
     <link rel="stylesheet" href="/CSS/homePage.css">
 
-    <title>PixelTrader – Nettoyage CSV</title>
+    <title>PixelTrader – Accueil</title>
 </head>
+
 <body>
-    <header>
-        <h1>PixelTrader</h1>
-        <nav>
-            <a href="/index.html">Home</a>
-            <a href="/html/Nettoyage.html">Nettoyage</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Notre Collection</h2>
-            <div id="collectionWelcomer">
-                <?php
-                 if($collection) {
-                    var_dump($collection);
-                 }
-                ?>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div id="contact">
-            <h2>Coordonées</h2>
-            <ul>
-                <li>Adresse</li>
-                <li>Email</li>
-                <li>Numero de téléphone</li>
-            </ul>
+<header>
+    <h1>PixelTrader</h1>
+    <nav>
+        <a href="/index.php">Home</a>
+        <a href="/html/Nettoyage.html">Nettoyage</a>
+    </nav>
+</header>
+
+<main>
+    <!-- Filtres -->
+   <section class="filters" aria-label="Filtres de la collection">
+    <!-- Filtre plateforme -->
+    <label for="filterPlateforme">Plateforme</label>
+    <select id="filterPlateforme">
+        <option value="">Toutes les plateformes</option>
+        <option value="Nintendo 64">Nintendo 64</option>
+        <option value="Sega Mega Drive">Sega Mega Drive</option>
+        <option value="Sega Master System">Sega Master System</option>
+        <option value="Super Nintendo">Super Nintendo</option>
+        <option value="NES">NES</option>
+        <option value="Game Boy">Game Boy</option>
+        <option value="Game Boy Color">Game Boy Color</option>
+        <option value="Game Boy Advance">Game Boy Advance</option>
+        <option value="PlayStation 1">PlayStation 1</option>
+        <option value="PlayStation 2">PlayStation 2</option>
+        <option value="PlayStation 3">PlayStation 3</option>
+        <option value="Nintendo Switch">Nintendo Switch</option>
+        <option value="GameCube">GameCube</option>
+        <option value="Xbox">Xbox</option>
+        <option value="PC">PC</option>
+        <option value="Dreamcast">Dreamcast</option>
+        <option value="Saturn">Saturn</option>
+        <option value="Arcade">Arcade</option>
+    </select>
+
+    <!-- Filtre état -->
+    <label for="filterEtat">État</label>
+    <select id="filterEtat">
+        <option value="">Tous les états</option>
+        <option value="Excellent">Excellent</option>
+        <option value="Bon">Bon</option>
+        <option value="Moyen">Moyen</option>
+        <option value="Mauvais">Mauvais</option>
+    </select>
+
+    <button id="applyFilters" type="button">Filtrer</button>
+
+    <!-- Collection -->
+    <section aria-labelledby="collection-title">
+        <h2 id="collection-title">Notre Collection</h2>
+        <div id="collectionWelcomer">
+            <!-- contenu injecté par JS -->
         </div>
-    </footer>
+    </section>
+</main>
+
+<footer>
+    <div id="contact">
+        <h2>Coordonnées</h2>
+        <ul>
+            <li>Adresse</li>
+            <li>Email</li>
+            <li>Numéro de téléphone</li>
+        </ul>
+    </div>
+</footer>
+
+<script src="/JavaScript/collectionDisplay.js"></script>
 </body>
-    <!-- Scripts JS -->
-    <script src="/JavaScript/collectionDisplay.js"></script>
 </html>
