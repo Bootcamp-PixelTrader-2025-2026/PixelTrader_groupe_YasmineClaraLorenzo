@@ -3,12 +3,13 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-
+    position: relative;
     padding: 2rem;
     background-color: var(--white);
     color: var(--black);
 
     min-height: 80vh;
+    z-index: -1;
 }
 
 #collectionWelcomer {
@@ -30,15 +31,19 @@ section {
     padding: 2rem;
 
     border: 0.4rem solid var(--black);
+    
     border-radius: 1rem;
 
     background-color: var(--retroBlue);
+
+
     color: var(--white);
 
     /* background: repeating-conic-gradient(rgb(64, 0, 255), rgb(255, 0, 43) 10deg); */
-    /* animation: rotation 1s infinite linear; */
+  /*  animation: rotation 5s infinite linear;*/
 
 }
+
 
 @keyframes rotation {
   from {
