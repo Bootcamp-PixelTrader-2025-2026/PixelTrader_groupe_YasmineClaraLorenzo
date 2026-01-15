@@ -1,67 +1,66 @@
 id;titre;plateforme;annee_sortie;etat;emplacement;valeur_estimee_eur;prix_achat_eur
 1;Super Mario 64;Nintendo 64;1996;Excellent;Etagere A;50.00 €;15.00 €
-2;The Legend of Zelda: Ocarina of Time;N64;1998;Moyen;Etagere A;75.00 €;20.00 €
+2;The Legend of Zelda: Ocarina of Time;Nintendo 64;1998;Moyen;Etagere A;75.00 €;20.00 €
 3;Sonic The Hedgehog;Sega Mega Drive;1991;Bon;Etagere B;30.00 €;5.00 €
 4;Final Fantasy VII;PlayStation 1;1997;Excellent;Vitrine 1;120.00 €;45.00 €
 5;Super Mario 64;Nintendo 64;1996;Excellent;Stock;50.00 €;15.00 €
-6;Street Fighter II;SNES;1992;Moyen;Etagere D;45.00 €;10.00 €
+6;Street Fighter II;Super Nintendo;1992;Moyen;Etagere D;45.00 €;10.00 €
 7;Tetris;Game Boy;1989;Bon;Caisse 2;5.00 €;5.00 €
-8;Metal Gear Solid;Ps1;1998;Excellent;Vitrine 1;60.00 €;20.00 €
+8;Metal Gear Solid;PlayStation 1;1998;Excellent;Vitrine 1;60.00 €;20.00 €
 9;Chrono Trigger;Super Nintendo;1995;Excellent;Coffre-fort;300.00 €;80.00 €
-10;Castlevania: Symphony of the Night;PlayStation;1997;Bon;Etagere A;150.00 €;50.00 €
-11;Alex Kidd in Miracle World;Master System;1986;Moyen;Etagere B;20.00 €;5.00 €
-12;Pokemon Rouge;GameBoy;1996;Bon;Caisse 2;40.00 €;15.00 €
+10;Castlevania: Symphony of the Night;PlayStation 1;1997;Bon;Etagere A;150.00 €;50.00 €
+11;Alex Kidd in Miracle World;Sega Master System;1986;Moyen;Etagere B;20.00 €;5.00 €
+12;Pokemon Rouge;Game Boy;1996;Bon;Caisse 2;40.00 €;15.00 €
 13;GoldenEye 007;Nintendo 64;1997;Excellent;Etagere F;55.00 €;20.00 €
 14;Shenmue;Dreamcast;1999;Excellent;Vitrine 2;80.00 €;30.00 €
 15;Half-Life;PC;;Bon;Reserve;15.00 €;2.00 €
 16;Super Mario Bros 3;NES;1988;Mauvais;Etagere A;35.00 €;10.00 €
 17;Resident Evil;PlayStation 1;1996;Bon;Etagere G;45.00 €;15.00 €
 18;Sonic The Hedgehog;Sega Mega Drive;1991;Bon;Etagere B;30.00 €;8.00 €
-19;Donkey Kong Country;SNES;1994;Excellent;Etagere A;40.00 €;15.00 €
-20;Pac-Man;Arcade;1980;Moyen;Entrée;1355.75 €;271.15 €
-21;Grand Theft Auto;PS1;1997;Mauvais;Stock;25.00 €;5.00 €
+19;Donkey Kong Country;Super Nintendo;1994;Excellent;Etagere A;40.00 €;15.00 €
+20;Pac-Man;Arcade;1980;Moyen;Entrée;1354.00 €;270.80 €
+21;Grand Theft Auto;PlayStation 1;1997;Mauvais;Stock;25.00 €;5.00 €
 22;Halo: Combat Evolved;Xbox;2001;Excellent;Etagere H;15.00 €;5.00 €
-23;Super Metroid;SNES;1994;Moyen;Etagere A;120.00 €;40.00 €
-24;Final Fantasy VII;PSX;1997;Excellent;Stock;120.00 €;40.00 €
-25;Crash Bandicoot;Playstation;1996;Bon;Etagere C;30.00 €;10.00 €
+23;Super Metroid;Super Nintendo;1994;Moyen;Etagere A;120.00 €;40.00 €
+24;Final Fantasy VII;PlayStation 1;1997;Excellent;Stock;120.00 €;40.00 €
+25;Crash Bandicoot;PlayStation 1;1996;Bon;Etagere C;30.00 €;10.00 €
 26;Pokemon Bleu;Game Boy;1999;Moyen;Caisse 2;35.00 €;10.00 €
 27;Zelda: A Link to the Past;Super Nintendo;;Moyen;Etagere A;10.00 €;10.00 €
-28;Earthworm Jim;Megadrive;1994;Bon;Etagere B;40.00 €;15.00 €
-29;Silent Hill;PS1;1999;Excellent;Vitrine 1;80.00 €;25.00 €
+28;Earthworm Jim;Sega Mega Drive;1994;Bon;Etagere B;40.00 €;15.00 €
+29;Silent Hill;PlayStation 1;1999;Excellent;Vitrine 1;80.00 €;25.00 €
 30;Super Smash Bros Melee;GameCube;2001;Mauvais;Etagere H;35.00 €;10.00 €
 31;Ico;PlayStation 2;2001;Excellent;Etagere C;40.00 €;15.00 €
-32;Shadow of the Colossus;PS2;2005;Excellent;Etagere C;35.00 €;12.00 €
-33;Street Fighter 2;Super Famicom;1992;Bon;Stock;18.98 €;2.71 €
-34;Conker's Bad Fur Day;N64;2001;Excellent;Coffre-fort;200.00 €;60.00 €
+32;Shadow of the Colossus;PlayStation 2;2005;Excellent;Etagere C;35.00 €;12.00 €
+33;Street Fighter 2;Super Nintendo;1992;Bon;Stock;18.96 €;2.71 €
+34;Conker's Bad Fur Day;Nintendo 64;2001;Excellent;Coffre-fort;200.00 €;60.00 €
 35;Tomb Raider;Saturn;1996;Bon;Etagere B;30.00 €;10.00 €
 36;Crazy Taxi;Dreamcast;1999;Excellent;Etagere F;40.00 €;15.00 €
 37;Mario Kart 64;Nintendo 64;1997;Moyen;Etagere A;35.00 €;12.00 €
-38;Pokemon Or;Gameboy Color;2000;Moyen;Caisse 2;45.00 €;15.00 €
+38;Pokemon Or;Game Boy Color;2000;Moyen;Caisse 2;45.00 €;15.00 €
 39;Duck Hunt;NES;1984;Bon;Stock;10.00 €;2.00 €
 40;Mega Man 2;NES;1988;Mauvais;Etagere A;50.00 €;15.00 €
-41;Gran Turismo;Playstation 1;1997;Excellent;Etagere C;10.00 €;2.00 €
+41;Gran Turismo;PlayStation 1;1997;Excellent;Etagere C;10.00 €;2.00 €
 42;SoulCalibur;Dreamcast;1999;Excellent;Vitrine 2;40.00 €;15.00 €
 43;Diablo II;PC;2000;Excellent;Reserve;60.00 €;10.00 €
-44;Portal 2;PS3;2011;Excellent;Stock;20.00 €;5.00 €
-45;The Last of Us;PS3;2013;Excellent;Etagere C;25.00 €;10.00 €
-46;Zelda Breath of the Wild;Switch;2017;Moyen;Comptoir;40.00 €;25.00 €
+44;Portal 2;PlayStation 3;2011;Excellent;Stock;20.00 €;5.00 €
+45;The Last of Us;PlayStation 3;2013;Excellent;Etagere C;25.00 €;10.00 €
+46;Zelda Breath of the Wild;Nintendo Switch;2017;Moyen;Comptoir;40.00 €;25.00 €
 47;Tetris;Game Boy;;Bon;Caisse 2;15.00 €;5.00 €
-48;Spyro the Dragon;PS1;1998;Mauvais;Etagere C;25.00 €;8.00 €
+48;Spyro the Dragon;PlayStation 1;1998;Mauvais;Etagere C;25.00 €;8.00 €
 49;F-Zero X;Nintendo 64;1998;Excellent;Stock;45.00 €;15.00 €
-50;Earthbound;SNES;1994;Excellent;Coffre-fort;856.60 €;171.32 €
-51;Final Fantasy X;PS2;2001;Bon;Etagere C;15.00 €;5.00 €
-52;Super Mario Sunshine;GCN;2002;Mauvais;Stock;30.00 €;10.00 €
+50;Earthbound;Super Nintendo;1994;Excellent;Coffre-fort;858.50 €;171.70 €
+51;Final Fantasy X;PlayStation 2;2001;Bon;Etagere C;15.00 €;5.00 €
+52;Super Mario Sunshine;GameCube;2002;Mauvais;Stock;30.00 €;10.00 €
 53;Luigi's Mansion;GameCube;2001;Excellent;Etagere H;45.00 €;15.00 €
-54;Zelda Wind Waker;GC;2002;Excellent;Vitrine 1;80.00 €;30.00 €
+54;Zelda Wind Waker;GameCube;2002;Excellent;Vitrine 1;80.00 €;30.00 €
 55;Metroid Prime;GameCube;2002;Excellent;Etagere H;25.00 €;8.00 €
 56;Sonic Adventure 2;Dreamcast;2001;Bon;Etagere F;45.00 €;15.00 €
 57;Kingdom Hearts;PlayStation 2;2002;Bon;Etagere C;15.00 €;5.00 €
-58;Okami;PS2;2006;Excellent;Etagere C;30.00 €;10.00 €
+58;Okami;PlayStation 2;2006;Excellent;Etagere C;30.00 €;10.00 €
 59;Metal Gear Solid 3;PlayStation 2;2004;Excellent;Vitrine 2;50.00 €;20.00 €
 60;Sim City 2000;PC;1993;Moyen;Reserve;20.00 €;2.00 €
-61;Pokemon Emeraude;GBA;2004;Moyen;Caisse 2;60.00 €;20.00 €
-62;Castlevania Aria of Sorrow;GBA;2003;Excellent;Vitrine 1;120.00 €;40.00 €
+61;Pokemon Emeraude;Game Boy Advance;2004;Moyen;Caisse 2;60.00 €;20.00 €
+62;Castlevania Aria of Sorrow;Game Boy Advance;2003;Excellent;Vitrine 1;120.00 €;40.00 €
 63;Advance Wars;Game Boy Advance;2001;Bon;Etagere D;35.00 €;10.00 €
-64;Super Mario World;SNES;1990;Mauvais;Stock;25.00 €;5.00 €
-65;Chrono Cross;PS1;1999;Bon;Stock;21.69 €;5.42 €
-66;E.T. the Extra-Terrestrial;Atari 2600;1982;Mauvais;Poubelle;0.86 €;0.00 €
+64;Super Mario World;Super Nintendo;1990;Mauvais;Stock;25.00 €;5.00 €
+65;Chrono Cross;PlayStation 1;1999;Bon;Stock;21.66 €;5.42 €
