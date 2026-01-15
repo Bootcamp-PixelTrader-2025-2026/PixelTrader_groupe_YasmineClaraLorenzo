@@ -26,9 +26,9 @@
 
 <main>
     <!-- Filtres -->
-   <section class="filters" aria-label="Filtres de la collection">
+   <article class="filters" aria-label="Filtres de la collection">
     <!-- Filtre plateforme -->
-    <label for="filterPlateforme">Plateforme</label>
+    <label for="filterPlateforme">Plateforme : </label>
     <select id="filterPlateforme">
         <option value="">Toutes les plateformes</option>
         <option value="Nintendo 64">Nintendo 64</option>
@@ -52,7 +52,7 @@
     </select>
 
     <!-- Filtre état -->
-    <label for="filterEtat">État</label>
+    <label for="filterEtat">État :</label>
     <select id="filterEtat">
         <option value="">Tous les états</option>
         <option value="Excellent">Excellent</option>
@@ -61,8 +61,8 @@
         <option value="Mauvais">Mauvais</option>
     </select>
 
-    <button id="applyFilters" type="button">Filtrer</button>
-
+    <button id="applyFilters" type="button">Filtrer</button>    
+</article>
     <!-- Collection -->
     <section aria-labelledby="collection-title">
         <h2 id="collection-title">Notre Collection</h2>
