@@ -7,7 +7,7 @@ $password = "";
 **** CREATION DES TABLES ****
 
 CREATE TABLE Jeu (
-    id_jeu int NOT NULL,
+    id_jeu int NOT NULL AUTO_INCREMENT,
     titre varchar(255),
     plateforme varchar(255),
     annee_sortie int NOT NULL,
