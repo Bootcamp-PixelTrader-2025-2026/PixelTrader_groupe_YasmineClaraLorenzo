@@ -34,11 +34,10 @@ if (($handle = fopen(__DIR__ . "/Data/clean_data.csv", "r")) !== false) {
 
         // on insert dans la tab jeu
         $stmtJeu = $pdo->prepare("
-            INSERT  INTO Jeu (id_jeu, titre, plateforme, annee_sortie)
-            VALUES (?, ?, ?, ?) 
+            INSERT  INTO Jeu (titre, plateforme, annee_sortie)
+            VALUES (?, ?, ?) 
         ");//? les parametres utilisé pk? car pour la sécurité
         $stmtJeu->execute([
-            $id_jeu,
             $titre,
             $plateforme,
             $annee_sortie
@@ -46,11 +45,10 @@ if (($handle = fopen(__DIR__ . "/Data/clean_data.csv", "r")) !== false) {
 
         //  on insert dans la tab Stock
         $stmtStock = $pdo->prepare("
-            INSERT INTO Stock (id_jeu, etat, valeur_estime, emplacement, prix_achat)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO Stock (etat, valeur_estime, emplacement, prix_achat)
+            VALUES (?, ?, ?, ?)
         ");
         $stmtStock->execute([
-            $id_jeu,
             $etat,
             $valeur_estime,
             $emplacement,
