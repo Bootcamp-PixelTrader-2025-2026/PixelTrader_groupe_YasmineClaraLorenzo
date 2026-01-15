@@ -12,7 +12,7 @@
   {
     "id": 2,
     "titre": "The Legend of Zelda: Ocarina of Time",
-    "plateforme": "N64",
+    "plateforme": "Nintendo 64",
     "annee_sortie": "1998",
     "etat": "Moyen",
     "emplacement": "Etagere A",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "titre": "Street Fighter II",
-    "plateforme": "SNES",
+    "plateforme": "Super Nintendo",
     "annee_sortie": "1992",
     "etat": "Moyen",
     "emplacement": "Etagere D",
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "titre": "Metal Gear Solid",
-    "plateforme": "Ps1",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1998",
     "etat": "Excellent",
     "emplacement": "Vitrine 1",
@@ -92,7 +92,7 @@
   {
     "id": 10,
     "titre": "Castlevania: Symphony of the Night",
-    "plateforme": "PlayStation",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1997",
     "etat": "Bon",
     "emplacement": "Etagere A",
@@ -102,7 +102,7 @@
   {
     "id": 11,
     "titre": "Alex Kidd in Miracle World",
-    "plateforme": "Master System",
+    "plateforme": "Sega Master System",
     "annee_sortie": "1986",
     "etat": "Moyen",
     "emplacement": "Etagere B",
@@ -112,7 +112,7 @@
   {
     "id": 12,
     "titre": "Pokemon Rouge",
-    "plateforme": "GameBoy",
+    "plateforme": "Game Boy",
     "annee_sortie": "1996",
     "etat": "Bon",
     "emplacement": "Caisse 2",
@@ -182,7 +182,7 @@
   {
     "id": 19,
     "titre": "Donkey Kong Country",
-    "plateforme": "SNES",
+    "plateforme": "Super Nintendo",
     "annee_sortie": "1994",
     "etat": "Excellent",
     "emplacement": "Etagere A",
@@ -196,13 +196,13 @@
     "annee_sortie": "1980",
     "etat": "Moyen",
     "emplacement": "Entrée",
-    "valeur_estimee_eur": "1355.75 €",
-    "prix_achat_eur": "271.15 €"
+    "valeur_estimee_eur": "1354.00 €",
+    "prix_achat_eur": "270.80 €"
   },
   {
     "id": 21,
     "titre": "Grand Theft Auto",
-    "plateforme": "PS1",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1997",
     "etat": "Mauvais",
     "emplacement": "Stock",
@@ -222,7 +222,7 @@
   {
     "id": 23,
     "titre": "Super Metroid",
-    "plateforme": "SNES",
+    "plateforme": "Super Nintendo",
     "annee_sortie": "1994",
     "etat": "Moyen",
     "emplacement": "Etagere A",
@@ -232,7 +232,7 @@
   {
     "id": 24,
     "titre": "Final Fantasy VII",
-    "plateforme": "PSX",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1997",
     "etat": "Excellent",
     "emplacement": "Stock",
@@ -242,7 +242,7 @@
   {
     "id": 25,
     "titre": "Crash Bandicoot",
-    "plateforme": "Playstation",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1996",
     "etat": "Bon",
     "emplacement": "Etagere C",
@@ -272,7 +272,7 @@
   {
     "id": 28,
     "titre": "Earthworm Jim",
-    "plateforme": "Megadrive",
+    "plateforme": "Sega Mega Drive",
     "annee_sortie": "1994",
     "etat": "Bon",
     "emplacement": "Etagere B",
@@ -282,7 +282,7 @@
   {
     "id": 29,
     "titre": "Silent Hill",
-    "plateforme": "PS1",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1999",
     "etat": "Excellent",
     "emplacement": "Vitrine 1",
@@ -312,7 +312,7 @@
   {
     "id": 32,
     "titre": "Shadow of the Colossus",
-    "plateforme": "PS2",
+    "plateforme": "PlayStation 2",
     "annee_sortie": "2005",
     "etat": "Excellent",
     "emplacement": "Etagere C",
@@ -322,17 +322,17 @@
   {
     "id": 33,
     "titre": "Street Fighter 2",
-    "plateforme": "Super Famicom",
+    "plateforme": "Super Nintendo",
     "annee_sortie": "1992",
     "etat": "Bon",
     "emplacement": "Stock",
-    "valeur_estimee_eur": "18.98 €",
+    "valeur_estimee_eur": "18.96 €",
     "prix_achat_eur": "2.71 €"
   },
   {
     "id": 34,
     "titre": "Conker's Bad Fur Day",
-    "plateforme": "N64",
+    "plateforme": "Nintendo 64",
     "annee_sortie": "2001",
     "etat": "Excellent",
     "emplacement": "Coffre-fort",
@@ -372,7 +372,7 @@
   {
     "id": 38,
     "titre": "Pokemon Or",
-    "plateforme": "Gameboy Color",
+    "plateforme": "Game Boy Color",
     "annee_sortie": "2000",
     "etat": "Moyen",
     "emplacement": "Caisse 2",
@@ -402,7 +402,7 @@
   {
     "id": 41,
     "titre": "Gran Turismo",
-    "plateforme": "Playstation 1",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1997",
     "etat": "Excellent",
     "emplacement": "Etagere C",
@@ -432,7 +432,7 @@
   {
     "id": 44,
     "titre": "Portal 2",
-    "plateforme": "PS3",
+    "plateforme": "PlayStation 3",
     "annee_sortie": "2011",
     "etat": "Excellent",
     "emplacement": "Stock",
@@ -442,7 +442,7 @@
   {
     "id": 45,
     "titre": "The Last of Us",
-    "plateforme": "PS3",
+    "plateforme": "PlayStation 3",
     "annee_sortie": "2013",
     "etat": "Excellent",
     "emplacement": "Etagere C",
@@ -452,7 +452,7 @@
   {
     "id": 46,
     "titre": "Zelda Breath of the Wild",
-    "plateforme": "Switch",
+    "plateforme": "Nintendo Switch",
     "annee_sortie": "2017",
     "etat": "Moyen",
     "emplacement": "Comptoir",
@@ -472,7 +472,7 @@
   {
     "id": 48,
     "titre": "Spyro the Dragon",
-    "plateforme": "PS1",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1998",
     "etat": "Mauvais",
     "emplacement": "Etagere C",
@@ -492,17 +492,17 @@
   {
     "id": 50,
     "titre": "Earthbound",
-    "plateforme": "SNES",
+    "plateforme": "Super Nintendo",
     "annee_sortie": "1994",
     "etat": "Excellent",
     "emplacement": "Coffre-fort",
-    "valeur_estimee_eur": "856.60 €",
-    "prix_achat_eur": "171.32 €"
+    "valeur_estimee_eur": "858.50 €",
+    "prix_achat_eur": "171.70 €"
   },
   {
     "id": 51,
     "titre": "Final Fantasy X",
-    "plateforme": "PS2",
+    "plateforme": "PlayStation 2",
     "annee_sortie": "2001",
     "etat": "Bon",
     "emplacement": "Etagere C",
@@ -512,7 +512,7 @@
   {
     "id": 52,
     "titre": "Super Mario Sunshine",
-    "plateforme": "GCN",
+    "plateforme": "GameCube",
     "annee_sortie": "2002",
     "etat": "Mauvais",
     "emplacement": "Stock",
@@ -532,7 +532,7 @@
   {
     "id": 54,
     "titre": "Zelda Wind Waker",
-    "plateforme": "GC",
+    "plateforme": "GameCube",
     "annee_sortie": "2002",
     "etat": "Excellent",
     "emplacement": "Vitrine 1",
@@ -572,7 +572,7 @@
   {
     "id": 58,
     "titre": "Okami",
-    "plateforme": "PS2",
+    "plateforme": "PlayStation 2",
     "annee_sortie": "2006",
     "etat": "Excellent",
     "emplacement": "Etagere C",
@@ -602,7 +602,7 @@
   {
     "id": 61,
     "titre": "Pokemon Emeraude",
-    "plateforme": "GBA",
+    "plateforme": "Game Boy Advance",
     "annee_sortie": "2004",
     "etat": "Moyen",
     "emplacement": "Caisse 2",
@@ -612,7 +612,7 @@
   {
     "id": 62,
     "titre": "Castlevania Aria of Sorrow",
-    "plateforme": "GBA",
+    "plateforme": "Game Boy Advance",
     "annee_sortie": "2003",
     "etat": "Excellent",
     "emplacement": "Vitrine 1",
@@ -632,7 +632,7 @@
   {
     "id": 64,
     "titre": "Super Mario World",
-    "plateforme": "SNES",
+    "plateforme": "Super Nintendo",
     "annee_sortie": "1990",
     "etat": "Mauvais",
     "emplacement": "Stock",
@@ -642,21 +642,11 @@
   {
     "id": 65,
     "titre": "Chrono Cross",
-    "plateforme": "PS1",
+    "plateforme": "PlayStation 1",
     "annee_sortie": "1999",
     "etat": "Bon",
     "emplacement": "Stock",
-    "valeur_estimee_eur": "21.69 €",
+    "valeur_estimee_eur": "21.66 €",
     "prix_achat_eur": "5.42 €"
-  },
-  {
-    "id": 66,
-    "titre": "E.T. the Extra-Terrestrial",
-    "plateforme": "Atari 2600",
-    "annee_sortie": "1982",
-    "etat": "Mauvais",
-    "emplacement": "Poubelle",
-    "valeur_estimee_eur": "0.86 €",
-    "prix_achat_eur": "0.00 €"
   }
 ]
