@@ -40,7 +40,11 @@ if (($handle = fopen(__DIR__ . "/Data/clean_data.csv", "r")) !== false) {
             $prix_achat
         ] = $data;
 
-        //execute la requete dans jeu
+        // on insert dans la tab jeu
+        $stmtJeu = $pdo->prepare("
+            INSERT  INTO Jeu (id_jeu, titre, plateforme, annee_sortie)
+            VALUES (?, ?, ?, ?) 
+        ");//? les parametres utilisé pk? car pour la sécurité
         $stmtJeu->execute([
             $titre,
             $plateforme,

@@ -10,3 +10,43 @@ section {
 
     min-height: 80vh;
 }
+
+#collectionWelcomer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+.GameCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 20vw;
+    height: 20vw;
+
+    margin: 1rem;
+    padding: 2rem;
+
+    border: 0.4rem solid var(--black);
+    border-radius: 1rem;
+
+    background-color: var(--retroBlue);
+    color: var(--white);
+
+    /* background: repeating-conic-gradient(rgb(64, 0, 255), rgb(255, 0, 43) 10deg); */
+    /* animation: rotation 1s infinite linear; */
+
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
