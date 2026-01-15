@@ -34,7 +34,7 @@ if (($handle = fopen(__DIR__ . "/Data/clean_data.csv", "r")) !== false) {
 
         // on insert dans la tab jeu
         $stmtJeu = $pdo->prepare("
-            INSERT IGNORE INTO Jeu (id_jeu, titre, plateforme, annee_sortie)
+            INSERT  INTO Jeu (id_jeu, titre, plateforme, annee_sortie)
             VALUES (?, ?, ?, ?) 
         ");//? les parametres utilisé pk? car pour la sécurité
         $stmtJeu->execute([
