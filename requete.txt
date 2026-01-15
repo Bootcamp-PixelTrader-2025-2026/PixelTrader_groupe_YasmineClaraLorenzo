@@ -18,12 +18,13 @@ CREATE TABLE Jeu (
 CREATE TABLE Stock (
     id_jeu int NOT NULL,
     etat varchar(255),
+    emplacement varchar(255), 
     valeur_estime varchar(255),
-    emplacement varchar(255),
-    prix_achat int NOT NULL,
+    prix_achat varchar(255),
     
     FOREIGN KEY (id_jeu) REFERENCES Jeu(id_jeu)
 );
+
 
 ****** TEST *******
 
