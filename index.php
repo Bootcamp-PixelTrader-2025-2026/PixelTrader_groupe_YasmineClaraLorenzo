@@ -19,7 +19,7 @@
 
 <body>
 <header>
-    <h1>PixelTrader</h1>
+    <h1>PixelTrader </h1>
     <nav>
         <a href="/index.php">Home</a>
         <a href="/html/Nettoyage.html">Nettoyage</a>
@@ -85,6 +85,22 @@
             <li>Email</li>
             <li>Numéro de téléphone</li>
         </ul>
+    </div>
+    <div id="socials">
+        <h2>Réseaux sociaux</h2>
+        <ul class="social-list">
+        <a href="#" aria-label="Instagram">
+            <img src="/assets/icons/instagram.png" alt="Instagram">
+        </a>
+
+        <a href="#" aria-label="Facebook">
+            <img src="/assets/icons/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="#" aria-label="X">
+            <img src="/assets/icons/x.png" alt="X">
+        </a>
+    </ul>
     </div>
 </footer>
 
