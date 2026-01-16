@@ -14,11 +14,16 @@ if (($handle = fopen(__DIR__ . "/Data/clean_data.csv", "r")) !== false) {
     // ignorer la ligne d'en-tête
     fgetcsv($handle, 1000, ";");
 
+    //on parcours chaque ligne csv
     while (($data = fgetcsv($handle, 1000, ";")) !== false) {
 
+    // si ligne contient pas au moins 8 colonnes on ignore pour pas erreur
     if (count($data) < 8) {
         continue;
     }
+
+    
+    // ligne CSV maintenant variables(chaque var correspond a colonne)
 
     [
         $id_jeu,
@@ -36,7 +41,7 @@ if (($handle = fopen(__DIR__ . "/Data/clean_data.csv", "r")) !== false) {
         $stmtJeu = $pdo->prepare("
             INSERT INTO Jeu (id_jeu, titre, plateforme, annee_sortie)
             VALUES (?, ?, ?, ?) 
-        ");//? les parametres utilisé pk? car pour la sécurité
+        ");//? les parametres utilisé pk? car pour la sécurité(pour éviter les injonctions sql il me semble)
         $stmtJeu->execute([
             $id_jeu,
             $titre,

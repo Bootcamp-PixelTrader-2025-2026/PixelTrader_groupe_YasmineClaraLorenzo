@@ -15,7 +15,7 @@ $imagesById = [
     1  => "Super_Mario_64.png",
     5  => "Super_Mario_64.png",
     37 => "Super_Mario_64.png",
-    16 => "Super_Mario_Bros_3_Logo.png",
+    16 => "Super_Mario_Bros._3_Logo.png",
     52 => "Super_Mario_64.png",
     64 => "Super_Mario_64.png",
 
@@ -73,8 +73,21 @@ $imagesById = [
     55 => "Metroid_Logo.png",
     28 => "Earthworm_Jim_Logo.png",
     35 => "Tomb_Raider_Logo.png",
-    104 => "Duck_Hunt_Logo.png"
-
+    104 => "Duck_Hunt_Logo.png",
+    63 =>"Advance_Wars_Logo.png",
+    57 => "Kingdom.png",
+    58 => "Okami.png",
+    31 => "Ico.png",
+    17 => "Resident_Evil.png",
+    23 => "Metroid_Logo.png",
+    32 => "shadow.png",
+    34 => "conker.jpg",
+    41 => "gran_turismo.png",
+    43 => "diablo_logo.png",
+    49 => "fzero.png",
+    50 => "earthbound.png",
+    53 => "luigi.png",
+    60 => "sim.png"
 ];
 
 
