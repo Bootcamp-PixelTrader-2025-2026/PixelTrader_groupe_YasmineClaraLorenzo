@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/CSS/button.css">
     <link rel="stylesheet" href="/CSS/header.css">
     <link rel="stylesheet" href="/CSS/footer.css">
+
     <link rel="stylesheet" href="/CSS/homePage.css">
+    <link rel="stylesheet" href="/CSS/Details.css">
 
     <title>PixelTrader – Accueil</title>
 </head>
@@ -29,7 +31,7 @@
    <article class="filters" aria-label="Filtres de la collection">
     <!-- Filtre plateforme -->
     <label for="filterPlateforme">Plateforme : </label>
-    <select id="filterPlateforme">
+    <select id="filterPlateforme" class="filter">
         <option value="">Toutes les plateformes</option>
         <option value="Nintendo 64">Nintendo 64</option>
         <option value="Sega Mega Drive">Sega Mega Drive</option>
@@ -53,7 +55,7 @@
 
     <!-- Filtre état -->
     <label for="filterEtat">État :</label>
-    <select id="filterEtat">
+    <select id="filterEtat" class="filter">
         <option value="">Tous les états</option>
         <option value="Excellent">Excellent</option>
         <option value="Bon">Bon</option>

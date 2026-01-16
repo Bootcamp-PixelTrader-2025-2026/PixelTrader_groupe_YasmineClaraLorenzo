@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détail du jeu</title>
-    <link rel="stylesheet" href="/CSS/header.css">
     <link rel="stylesheet" href="/CSS/destyle.css">
     <link rel="stylesheet" href="/CSS/variable.css">
     <link rel="stylesheet" href="/CSS/font.css">
-    <link rel="stylesheet" href="/CSS/homePage.css">
+    <link rel="stylesheet" href="/CSS/button.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+
+    <link rel="stylesheet" href="/CSS/Details.css">
 </head>
 
 <body>
 <header>
     <h1>PixelTrader</h1>
-    <nav class="retour">
+    <nav id="HomePage">
         <a  href="/index.php">← Retour à la collection</a>
     </nav>
 </header>
 
 <main>
-    <img  class="logo" src="/assets/GameLogos/Chrono_Trigger_Logo.png">
     <section id="gameDetail">
-        
-        <h2 id="gameTitle">Chargement...</h2>
-        
-        <ul id="gameInfos"></ul>
-        
+        <img  id="Gamelogo" src="/assets/GameLogos/Chrono_Trigger_Logo.png">
+        <div>
+            <h2 id="gameTitle">Chargement...</h2>
+            <ul id="gameInfos"></ul>
+        </div>
     </section>
 </main>
-
 <script src="/JavaScript/detail.js"></script>
 </body>
 </html>

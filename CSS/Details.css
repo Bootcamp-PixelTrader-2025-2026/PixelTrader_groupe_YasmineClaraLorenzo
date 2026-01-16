@@ -1,0 +1,20 @@
+#HomePage{
+  align-self: start;
+}
+
+#gameInfos li{
+  margin: 25px;
+}
+
+#Gamelogo{
+  width: 40vw;
+}
+
+#gameDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+
+    padding: 8rem 4rem;
+}
