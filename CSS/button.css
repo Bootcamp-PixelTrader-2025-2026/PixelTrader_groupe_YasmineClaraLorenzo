@@ -4,10 +4,60 @@ button {
     border: 0.3rem solid var(--retroBlue);
     border-radius: 1.5rem;
     color: var(--white);
-
+    cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background-color: var(--black);
+border-color: #3498db;
+  color:#92c3e4;
+}
+
+
+#filterPlateforme{
+
+  
+ appearance: none; 
+  -webkit-appearance: none;
+  
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 40px 12px 15px; 
+  
+  font-size: 16px;
+  background-color: var(--retroBlue);
+  border: 0.3rem solid var(--retroBlue);
+  border-radius: 1.5rem;
+  color: var(--white);
+  transition: 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#filterPlateforme:hover {
+  border-color: #3498db;
+  color:#92c3e4;
+}
+
+#filterEtat{
+ appearance: none; 
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 40px 12px 15px; 
+  font-size: 16px;
+  background-color: var(--retroBlue);
+  border: 0.3rem solid var(--retroBlue);
+  border-radius: 1.5rem;
+  color: var(--white);
+  transition: 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#filterEtat:hover {
+  border-color: #3498db;
+  color:#92c3e4;
 }

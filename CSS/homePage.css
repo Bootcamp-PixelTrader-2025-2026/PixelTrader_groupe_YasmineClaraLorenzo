@@ -10,6 +10,16 @@ section {
 
     min-height: 80vh;
 }
+article{
+    align-items: center;
+    gap: 2rem;
+
+    padding: 2rem;
+    background-color: var(--white);
+    color: var(--black);
+
+  
+}
 
 #collectionWelcomer {
     display: flex;
@@ -38,6 +48,82 @@ section {
     /* background: repeating-conic-gradient(rgb(64, 0, 255), rgb(255, 0, 43) 10deg); */
     /* animation: rotation 1s infinite linear; */
 
+}
+.retour{
+  align-self: start;
+}
+#gameInfos li{
+  margin: 25px;
+}
+.logo{
+  display: flex;
+  position: absolute;
+  margin: 60px;
+  width: 35%;
+  top: 10;
+  left: 10;
+}
+
+#filterPlateforme{
+
+  
+ appearance: none; 
+  -webkit-appearance: none;
+  
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 40px 12px 15px; 
+  
+  font-size: 16px;
+  background-color: var(--retroBlue);
+  border: 0.3rem solid var(--retroBlue);
+  border-radius: 1.5rem;
+  color: var(--white);
+  transition: 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#filterPlateforme:hover {
+  border-color: #3498db;
+  color:#92c3e4;
+}
+
+#filterEtat{
+ appearance: none; 
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 40px 12px 15px; 
+  font-size: 16px;
+  background-color: var(--retroBlue);
+  border: 0.3rem solid var(--retroBlue);
+  border-radius: 1.5rem;
+  color: var(--white);
+  transition: 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#filterEtat:hover {
+  border-color: #3498db;
+  color:#92c3e4;
+}
+.filters{
+  display: flex;
+  flex-direction: row;
+  top: 0px;
+
+}
+
+
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    width: 75%;
+  }
 }
 
 @keyframes rotation {
