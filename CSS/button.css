@@ -9,8 +9,8 @@ button {
 }
 
 button:hover {
-border-color: #3498db;
-  color:#92c3e4;
+border-color: var(--retroRose);
+  color: var(--retroRose);
 }
 
 .filter {
@@ -42,6 +42,6 @@ label {
 }
 
 .SelectFilter:hover {
-  border-color: #3498db;
-  color:#92c3e4;
+ border-color: var(--retroRose);
+  color: var(--retroRose);
 }

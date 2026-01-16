@@ -57,13 +57,19 @@ article{
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .logo {
-    position: relative;
-    width: 75%;
-  }
-}
 
+
+@media (max-width: 768px) {
+    .GameCard {
+    width: 80vw;
+    height: 50vw;
+  }
+  .filters{
+  display: flex;
+  flex-direction: column;
+}
+   
+}
 @keyframes rotation {
   from {
     transform: rotate(0deg);
