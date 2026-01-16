@@ -6,8 +6,10 @@
   margin: 25px;
 }
 
-#Gamelogo{
-  width: 40vw;
+#gameImage {
+  width: 320px;    
+  height: 320px;     /* même hauteur pour chaque imge */
+  object-fit: contain;
 }
 
 #gameDetail {

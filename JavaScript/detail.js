@@ -15,6 +15,8 @@ async function getGameDetail() {
 
     // titre du jeu
     document.getElementById('gameTitle').textContent = game.titre;
+    document.getElementById('gameImage').src = game.image;
+
 
     // infos du jeu
     document.getElementById('gameInfos').innerHTML = `
@@ -25,5 +27,5 @@ async function getGameDetail() {
     `;
 }
 
-// Lancement
+// lancement
 getGameDetail();

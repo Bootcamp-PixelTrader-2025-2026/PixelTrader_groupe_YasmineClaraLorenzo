@@ -1,5 +1,6 @@
 <?php
 
+// connexion BDD
 $pdo = new PDO(
     "mysql:host=localhost;dbname=pixel_trader;charset=utf8",
     "root",
@@ -7,65 +8,56 @@ $pdo = new PDO(
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
+// on ouvre le csv
 if (($handle = fopen(__DIR__ . "/Data/clean_data.csv", "r")) !== false) {
 
-    fgetcsv($handle, 1000, ";"); // header
-
-
-    $stmtJeu = $pdo->prepare("
-        INSERT INTO Jeu (titre, plateforme, annee_sortie)
-        VALUES (?, ?, ?)
-    ");
-
-    //requete insert stock
-    $stmtStock = $pdo->prepare("
-        INSERT INTO Stock (id_jeu, etat, emplacement, valeur_estime, prix_achat)
-        VALUES (?, ?, ?, ?, ?)
-    ");
-
-    $count = 0;
+    // ignorer la ligne d'en-tête
+    fgetcsv($handle, 1000, ";");
 
     while (($data = fgetcsv($handle, 1000, ";")) !== false) {
 
-        if (count($data) < 8) continue;
+    if (count($data) < 8) {
+        continue;
+    }
 
-        [
-            $_id_csv,
-            $titre,
-            $plateforme,
-            $annee_sortie,
-            $etat,
-            $emplacement,
-            $valeur_estime,
-            $prix_achat
-        ] = $data;
+    [
+        $id_jeu,
+        $titre,
+        $plateforme,
+        $annee_sortie,
+        $etat,
+        $emplacement,
+        $valeur_estime,
+        $prix_achat
+    ] = $data;
+    }
 
         // on insert dans la tab jeu
         $stmtJeu = $pdo->prepare("
-            INSERT  INTO Jeu (id_jeu, titre, plateforme, annee_sortie)
+            INSERT INTO Jeu (id_jeu, titre, plateforme, annee_sortie)
             VALUES (?, ?, ?, ?) 
         ");//? les parametres utilisé pk? car pour la sécurité
         $stmtJeu->execute([
+            $id_jeu,
             $titre,
             $plateforme,
             $annee_sortie
         ]);
 
-        $id_jeu = $pdo->lastInsertId();
-
-
-        //pareil
+        //  on insert dans la tab Stock
+        $stmtStock = $pdo->prepare("
+            INSERT INTO Stock (id_jeu, etat, valeur_estime, emplacement, prix_achat)
+            VALUES (?, ?, ?, ?, ?)
+        ");
         $stmtStock->execute([
             $id_jeu,
             $etat,
-            $emplacement,
             $valeur_estime,
+            $emplacement,
             $prix_achat
         ]);
-
-        $count++;
     }
 
     fclose($handle);
-    echo "Import terminé : $count jeux";
-}
+    echo "Import CSV terminé avec succès";
+

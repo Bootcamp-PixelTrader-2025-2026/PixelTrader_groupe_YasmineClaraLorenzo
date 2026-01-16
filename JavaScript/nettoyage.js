@@ -32,174 +32,187 @@ function Convert(montant, devise) {
     return montantObtenu;
 
 }
+
 async function getOriginalCSV(url) {
 
     cleanGames = []; // reset à chaque génération
 
-    const Request = await fetch(url);
-    const Data = await Request.text();
+    const data = await fetchCSV(url);
+    const lines = parseLines(data);
 
-    const GameArray = Data.split(/\r?\n/);//decoupe ligne par ligne
-
-    GameArray.forEach(line => {
-
-        let Game = line.split(";").map(col => col.trim());
-        if (Game[0] === "id" || Game.length < 8) return;
-
-        if (Game[5].toLowerCase() === "poubelle") return; //on saute la ligne si poubelle
-
-        /*etat*/
-        const state = Game[4].toLowerCase();
-        if (["excellent","comme neuf","platinum","neuf","collector","mint","big box","blister","steelbook"].includes(state)) {
-            Game[4] = "Excellent";
-        } else if (["bon","good","bon etat","jap"].includes(state)) {
-            Game[4] = "Bon";
-        } else if (["moyen","boite abimée","sans notice","cabinet","boite manquante","sans boite","occasion","loose","boite","use","pile hs"].includes(state)) {
-            Game[4] = "Moyen";
-        } else {
-            Game[4] = "Mauvais";
-        }
-
-        /*function normalizeEtat(etat) {
-    const state = etat.toLowerCase();
-
-    if (["excellent","comme neuf","platinum","neuf","collector","mint","big box","blister","steelbook"].includes(state)) {
-        return "Excellent";
-    } 
-    else if (["bon","good","bon etat","jap"].includes(state)) {
-        return "Bon";
-    } 
-    else if (["moyen","boite abimée","sans notice","cabinet","boite manquante","sans boite","occasion","loose","boite","use","pile hs"].includes(state)) {
-        return "Moyen";
-    } 
-    else {
-        return "Mauvais";
-    }
-}
-*/
-        /*valeur*/
-        let valeur = Game[6] || "";
-        const matchValeur = valeur.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
-
-        let montant = matchValeur ? Number(matchValeur[1]) : 0;
-        let devise = matchValeur ? (matchValeur[2] || "€") : "€";
-
-
-        //conversion
-        if (["¥","YEN"].includes(devise)) montant = Convert(montant,"¥");
-        if (["$","DOLLARS"].includes(devise)) montant = Convert(montant,"$");
-
-        Game[6] = montant.toFixed(2) + " €";
-
-        /*prix achat*/
-        let achat = Game[7] || "";
-        let matchAchat = achat.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
-
-        // si le prix d’achat correspond au format "nombre + devise",
-        // on recup le montant  et la devise sinon on met 0 par défaut
-        let montantAchat = matchAchat ? Number(matchAchat[1]) : 0; 
-        let deviseAchat = matchAchat ? (matchAchat[2] || "€") : "€";
-
-        if (["¥","YEN"].includes(deviseAchat)) montantAchat = Convert(montantAchat,"¥");
-        if (["$","DOLLARS"].includes(deviseAchat)) montantAchat = Convert(montantAchat,"$");
-
-        Game[7] = montantAchat.toFixed(2) + " €";
-                /*FAIRE DES FONCTION S2PAré plutot que tout en foreach*/
-        /*si val estimé absente on prend prix achat */
-        if (montant === 0) Game[6] = Game[7];
-
-        Game[2] = normalizePlateforme(Game[2]);
-
-        cleanGames.push({
-            id: Number(Game[0]),
-            titre: Game[1],
-            plateforme: Game[2],
-            annee_sortie: Game[3] || null,
-            etat: Game[4],
-            emplacement: Game[5],
-            valeur_estimee_eur: Game[6],
-            prix_achat_eur: Game[7]
-        });
+    lines.forEach(line => {
+        const game = parseGameLine(line);
+        if (!game) return;
+        cleanGames.push(game);
     });
 
-
-    //export
     exportJSON(cleanGames);
     exportCSV(cleanGames);
 }
 
-//normalise les plateform
+
+// Récupère le fichier CSV depuis une URL
+
+async function fetchCSV(url) {
+    const response = await fetch(url);
+    return await response.text();
+}
+
+function parseLines(data) {
+    return data.split(/\r?\n/);
+}
+
+/* =========================
+   PARSE D’UNE LIGNE
+========================= */
+
+function parseGameLine(line) {
+
+    const Game = line.split(";").map(col => col.trim());
+
+    // header ou ligne invalide
+    if (Game[0] === "id" || Game.length < 8) return null;
+
+    // poubelle
+    if (Game[5]?.toLowerCase() === "poubelle") return null;
+
+    const etat = normalizeEtat(Game[4]);
+    const prixAchat = normalizePrice(Game[7]);
+    const valeur = normalizePrice(Game[6]);
+
+    // si valeur estimée absente → prix d’achat
+    const valeurFinale = valeur === "0.00 €" ? prixAchat : valeur;
+
+    return {
+        id: Number(Game[0]),
+        titre: Game[1],
+        plateforme: normalizePlateforme(Game[2]),
+        annee_sortie: Game[3] || null,
+        etat: etat,
+        emplacement: Game[5],
+        valeur_estimee_eur: valeurFinale,
+        prix_achat_eur: prixAchat
+    };
+}
+
+/* =========================
+   NORMALISATION ETAT
+========================= */
+
+function normalizeEtat(etat) {
+
+    const state = (etat || "").toLowerCase();
+
+    if ([
+        "excellent", "comme neuf", "platinum", "neuf",
+        "collector", "mint", "big box", "blister", "steelbook"
+    ].includes(state)) {
+        return "Excellent";
+    }
+
+    if ([
+        "bon", "good", "bon etat", "jap"
+    ].includes(state)) {
+        return "Bon";
+    }
+
+    if ([
+        "moyen", "boite abimée", "sans notice", "cabinet",
+        "boite manquante", "sans boite", "occasion",
+        "loose", "boite", "use", "pile hs"
+    ].includes(state)) {
+        return "Moyen";
+    }
+
+    return "Mauvais";
+}
+
+/* =========================
+   NORMALISATION PRIX
+========================= */
+
+function normalizePrice(value) {
+
+    if (!value) return "0.00 €";
+
+    const match = value.match(/^(\d+(?:\.\d+)?)[\s]*([^\d\s]+)?$/i);
+
+    let montant = match ? Number(match[1]) : 0;
+    let devise = match ? (match[2] || "€") : "€";
+
+    if (["¥", "YEN"].includes(devise)) {
+        montant = Convert(montant, "¥");
+    }
+
+    if (["$", "DOLLARS"].includes(devise)) {
+        montant = Convert(montant, "$");
+    }
+
+    return montant.toFixed(2) + " €";
+}
+
+/* =========================
+   NORMALISATION PLATEFORME
+========================= */
+
 function normalizePlateforme(plateforme) {
+
     if (!plateforme) return "";
 
     plateforme = plateforme.toLowerCase().trim();
 
     const map = {
-            //Nintendo 64
-            "n64": "Nintendo 64",
-            "nintendo 64": "Nintendo 64",
-            "nintendo64": "Nintendo 64",
+        // Nintendo
+        "n64": "Nintendo 64",
+        "nintendo 64": "Nintendo 64",
+        "nintendo64": "Nintendo 64",
 
-            // PlayStation 1
-            "ps1": "PlayStation 1",
-            "psx": "PlayStation 1",
-            "playstation": "PlayStation 1",
-            "playstation 1": "PlayStation 1",
+        "snes": "Super Nintendo",
+        "super nintendo": "Super Nintendo",
+        "super famicom": "Super Nintendo",
 
-            // PlayStation 2
-            "ps2": "PlayStation 2",
-            "playstation 2": "PlayStation 2",
+        "nes": "NES",
 
-            // PlayStation 3
-            "ps3": "PlayStation 3",
-            "playstation 3": "PlayStation 3",
+        "game boy": "Game Boy",
+        "gameboy": "Game Boy",
 
-            // Super Nintendo
-            "snes": "Super Nintendo",
-            "super nintendo": "Super Nintendo",
-            "super famicom": "Super Nintendo",
+        "gameboy color": "Game Boy Color",
 
-            // NES
-            "nes": "NES",
+        "gba": "Game Boy Advance",
+        "game boy advance": "Game Boy Advance",
 
-            // Game Boy
-            "game boy": "Game Boy",
-            "gameboy": "Game Boy",
+        "gc": "GameCube",
+        "gcn": "GameCube",
+        "gamecube": "GameCube",
 
-            // Game Boy Color
-            "gameboy color": "Game Boy Color",
+        "switch": "Nintendo Switch",
 
-            // Game Boy Advance
-            "gba": "Game Boy Advance",
-            "game boy advance": "Game Boy Advance",
+        // PlayStation
+        "ps1": "PlayStation 1",
+        "psx": "PlayStation 1",
+        "playstation": "PlayStation 1",
+        "playstation 1": "PlayStation 1",
 
-            // GameCube
-            "gc": "GameCube",
-            "gcn": "GameCube",
-            "gamecube": "GameCube",
+        "ps2": "PlayStation 2",
+        "playstation 2": "PlayStation 2",
 
-            // Sega
-            "megadrive": "Sega Mega Drive",
-            "mega drive": "Sega Mega Drive",
-            "sega mega drive": "Sega Mega Drive",
-            "master system": "Sega Master System",
-            "dreamcast": "Dreamcast",
-            "saturn": "Saturn",
+        "ps3": "PlayStation 3",
+        "playstation 3": "PlayStation 3",
 
-            // Xbox
-            "xbox": "Xbox",
+        // Sega
+        "megadrive": "Sega Mega Drive",
+        "mega drive": "Sega Mega Drive",
+        "sega mega drive": "Sega Mega Drive",
 
-            // PC
-            "pc": "PC",
+        "master system": "Sega Master System",
+        "dreamcast": "Dreamcast",
+        "saturn": "Saturn",
 
-            // Arcade
-            "arcade": "Arcade",
-
-            // Switch
-            "switch": "Nintendo Switch",
-
-            // Atari
-            "atari 2600": "Atari 2600"
+        // Autres
+        "xbox": "Xbox",
+        "pc": "PC",
+        "arcade": "Arcade",
+        "atari 2600": "Atari 2600"
     };
 
     return map[plateforme] || plateforme;
