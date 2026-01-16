@@ -18,8 +18,12 @@ nav {
 
 a {
     color: var(--white);
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 a:hover {
     text-decoration: underline;
+    border-color: var(--retroRose);
+    color: var(--retroRose);
 }

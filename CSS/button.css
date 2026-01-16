@@ -2,12 +2,46 @@ button {
     padding: 1rem;
     background-color: var(--retroBlue);
     border: 0.3rem solid var(--retroBlue);
-    border-radius: 1.5rem;
+    border-radius: 0.8rem;
     color: var(--white);
-
+    cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background-color: var(--black);
+border-color: var(--retroRose);
+  color: var(--retroRose);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+label {
+  white-space: nowrap;
+}
+
+.SelectFilter{
+  appearance: none; 
+  -webkit-appearance: none;
+  
+  width: 100%;
+  max-width: 300px;
+  padding: 0.8rem; 
+
+  background-color: var(--retroBlue);
+  border: 0.3rem solid var(--retroBlue);
+  border-radius: 0.7rem;
+  color: var(--white);
+  
+  transition: 0.3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.SelectFilter:hover {
+ border-color: var(--retroRose);
+  color: var(--retroRose);
 }

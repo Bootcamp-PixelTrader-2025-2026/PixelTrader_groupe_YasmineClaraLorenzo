@@ -1,0 +1,35 @@
+#HomePage{
+  align-self: start;
+}
+
+#gameInfos li{
+  margin: 25px;
+}
+
+#gameImage {
+  width: 320px;    
+  height: 320px;     /* même hauteur pour chaque imge */
+  object-fit: contain;
+}
+
+#gameDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+
+    padding: 8rem 4rem;
+}
+
+@media (max-width: 768px) {
+  #gameDetail {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  #gameImage{
+    height: 180px;
+
+  }
+   
+}
