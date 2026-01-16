@@ -53,28 +53,9 @@ article{
 .filters{
   display: flex;
   flex-direction: row;
-  top: 0px;
+  align-items: center;
+  justify-content: center;
 }
-
-.filter{
-  width: 100%;
-  max-width: 300px;
-  padding: 12px 40px 12px 15px; 
-  background-color: var(--retroBlue);
-  border: 0.3rem solid var(--retroBlue);
-  border-radius: 1.5rem;
-  color: var(--white);
-  transition: 0.3s;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.filter:hover {
-  border-color: #3498db;
-  color:#92c3e4;
-}
-
 
 @media (max-width: 768px) {
   .logo {

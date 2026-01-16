@@ -2,7 +2,7 @@ button {
     padding: 1rem;
     background-color: var(--retroBlue);
     border: 0.3rem solid var(--retroBlue);
-    border-radius: 1.5rem;
+    border-radius: 0.8rem;
     color: var(--white);
     cursor: pointer;
     transition: 0.3s;
@@ -13,51 +13,35 @@ border-color: #3498db;
   color:#92c3e4;
 }
 
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-#filterPlateforme{
+label {
+  white-space: nowrap;
+}
 
-  
- appearance: none; 
+.SelectFilter{
+  appearance: none; 
   -webkit-appearance: none;
   
   width: 100%;
   max-width: 300px;
-  padding: 12px 40px 12px 15px; 
+  padding: 0.8rem; 
+
+  background-color: var(--retroBlue);
+  border: 0.3rem solid var(--retroBlue);
+  border-radius: 0.7rem;
+  color: var(--white);
   
-  font-size: 16px;
-  background-color: var(--retroBlue);
-  border: 0.3rem solid var(--retroBlue);
-  border-radius: 1.5rem;
-  color: var(--white);
   transition: 0.3s;
-  border-radius: 8px;
   cursor: pointer;
   text-align: center;
 }
 
-#filterPlateforme:hover {
-  border-color: #3498db;
-  color:#92c3e4;
-}
-
-#filterEtat{
- appearance: none; 
-  -webkit-appearance: none;
-  width: 100%;
-  max-width: 300px;
-  padding: 12px 40px 12px 15px; 
-  font-size: 16px;
-  background-color: var(--retroBlue);
-  border: 0.3rem solid var(--retroBlue);
-  border-radius: 1.5rem;
-  color: var(--white);
-  transition: 0.3s;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-}
-
-#filterEtat:hover {
+.SelectFilter:hover {
   border-color: #3498db;
   color:#92c3e4;
 }

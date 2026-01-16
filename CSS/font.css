@@ -11,7 +11,7 @@ h3 {
     font-size: 1.5rem;
 }
 
-p, a, li, button {
+p, a, li, button, label, select, option {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
 }

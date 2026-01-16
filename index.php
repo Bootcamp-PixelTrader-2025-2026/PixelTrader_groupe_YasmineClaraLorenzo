@@ -30,39 +30,42 @@
     <!-- Filtres -->
    <article class="filters" aria-label="Filtres de la collection">
     <!-- Filtre plateforme -->
-    <label for="filterPlateforme">Plateforme : </label>
-    <select id="filterPlateforme" class="filter">
-        <option value="">Toutes les plateformes</option>
-        <option value="Nintendo 64">Nintendo 64</option>
-        <option value="Sega Mega Drive">Sega Mega Drive</option>
-        <option value="Sega Master System">Sega Master System</option>
-        <option value="Super Nintendo">Super Nintendo</option>
-        <option value="NES">NES</option>
-        <option value="Game Boy">Game Boy</option>
-        <option value="Game Boy Color">Game Boy Color</option>
-        <option value="Game Boy Advance">Game Boy Advance</option>
-        <option value="PlayStation 1">PlayStation 1</option>
-        <option value="PlayStation 2">PlayStation 2</option>
-        <option value="PlayStation 3">PlayStation 3</option>
-        <option value="Nintendo Switch">Nintendo Switch</option>
-        <option value="GameCube">GameCube</option>
-        <option value="Xbox">Xbox</option>
-        <option value="PC">PC</option>
-        <option value="Dreamcast">Dreamcast</option>
-        <option value="Saturn">Saturn</option>
-        <option value="Arcade">Arcade</option>
-    </select>
+     <div class="filter">
+        <label for="filterPlateforme">Plateforme : </label>
+        <select id="filterPlateforme" class="SelectFilter">
+            <option value="">Toutes les plateformes</option>
+            <option value="Nintendo 64">Nintendo 64</option>
+            <option value="Sega Mega Drive">Sega Mega Drive</option>
+            <option value="Sega Master System">Sega Master System</option>
+            <option value="Super Nintendo">Super Nintendo</option>
+            <option value="NES">NES</option>
+            <option value="Game Boy">Game Boy</option>
+            <option value="Game Boy Color">Game Boy Color</option>
+            <option value="Game Boy Advance">Game Boy Advance</option>
+            <option value="PlayStation 1">PlayStation 1</option>
+            <option value="PlayStation 2">PlayStation 2</option>
+            <option value="PlayStation 3">PlayStation 3</option>
+            <option value="Nintendo Switch">Nintendo Switch</option>
+            <option value="GameCube">GameCube</option>
+            <option value="Xbox">Xbox</option>
+            <option value="PC">PC</option>
+            <option value="Dreamcast">Dreamcast</option>
+            <option value="Saturn">Saturn</option>
+            <option value="Arcade">Arcade</option>
+        </select>
+     </div>
 
     <!-- Filtre état -->
-    <label for="filterEtat">État :</label>
-    <select id="filterEtat" class="filter">
-        <option value="">Tous les états</option>
-        <option value="Excellent">Excellent</option>
-        <option value="Bon">Bon</option>
-        <option value="Moyen">Moyen</option>
-        <option value="Mauvais">Mauvais</option>
-    </select>
-
+     <div class="filter">
+        <label for="filterEtat">État :</label>
+        <select id="filterEtat" class="SelectFilter">
+            <option value="">Tous les états</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Bon">Bon</option>
+            <option value="Moyen">Moyen</option>
+            <option value="Mauvais">Mauvais</option>
+        </select>
+     </div>
     <button id="applyFilters" type="button">Filtrer</button>    
 </article>
     <!-- Collection -->
