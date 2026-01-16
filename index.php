@@ -19,7 +19,7 @@
 
 <body>
 <header>
-    <h1>PixelTrader </h1>
+    <h1>PixelTrader 👾</h1>
     <nav>
         <a href="/index.php">Home</a>
         <a href="/html/Nettoyage.html">Nettoyage</a>
@@ -87,7 +87,7 @@
         </ul>
     </div>
     <div id="socials">
-        <h2>Réseaux sociaux</h2>
+        <h3>Réseaux sociaux</h3>
         <ul class="social-list">
         <a href="#" aria-label="Instagram">
             <img src="/assets/icons/instagram.png" alt="Instagram">
