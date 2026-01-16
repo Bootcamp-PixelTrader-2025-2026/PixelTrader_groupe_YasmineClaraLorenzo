@@ -1,6 +1,6 @@
 ---
 
-### 👾 PixelTrader_groupe_YasmineClaraLorenzo
+### 👾 PixelTrader_groupe_YasmineClaraLorenzo (Yasmine Meftah , Clara Marchal , Lorenzo l'Hostis)
 Projet de groupe visant à développer un **MVP de gestion de stock** pour une boutique de retrogaming, à partir d’un **CSV legacy corrompu** (doublons, devises mixtes).  
 Le projet inclut le **nettoyage des données**, leur exposition via une **API PHP (JSON)** et une **interface web en HTML, CSS et JavaScript**.
 
