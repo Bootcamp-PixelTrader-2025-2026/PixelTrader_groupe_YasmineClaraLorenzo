@@ -41,12 +41,12 @@ PixelTrader_groupe_YasmineClaraLorenzo/
 ├── Api/                # API REST PHP (exposition des données en JSON)
 ├── Data/               # Données legacy et données nettoyées (CSV / JSON)
 ├── JavaScript/         # Scripts JS (nettoyage, affichage, logique front)
-├── CSS/                # Styles CSS (structure modulaire)
+├── CSS/                # Styles CSS 
 ├── html/               # Pages HTML (détails, nettoyage, etc.)
 ├── assets/             # Ressources statiques (icônes, logos, images)
 ├── import_csv.php      # Script d'import CSV vers la base de données
-├── index.php           # Point d'entrée principal de l'application
-├── pixel_trader.sql    # Script SQL (structure et données de secours)
+├── index.php           # Point d'entrée principal du site
+├── pixel_trader.sql    # Script SQL (structure et données de au cas où)
 └── README.md           # Documentation du projet
 
 
