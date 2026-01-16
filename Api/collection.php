@@ -9,6 +9,7 @@ $pdo = new PDO(
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
+//liste d'image par id
 $imagesById = [
     // Mario
     1  => "Super_Mario_64.png",
@@ -42,7 +43,7 @@ $imagesById = [
     10 => "Castlevania_symfony_of_the_night.png",
     62 => "Castlevania_symfony_of_the_night.png",
 
-    // Autres licences connues
+    // Autres licences 
     11 => "Alex_Kidd_in_Miracle_World_Logo.png",
     13 => "GoldenEye_007_Logo.png",
     14 => "Shenmue_Logo.png",
@@ -69,10 +70,12 @@ $imagesById = [
     26 => "Pokemon.png",
     38 =>"Pokemon.png",
     61 =>  "Pokemon.png",
-    55 => "Metroid_Logo.png"
+    55 => "Metroid_Logo.png",
+    28 => "Earthworm_Jim_Logo.png",
+    35 => "Tomb_Raider_Logo.png",
+    104 => "Duck_Hunt_Logo.png"
 
 ];
-
 
 
 // requête
