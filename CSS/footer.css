@@ -47,3 +47,29 @@ ul, li {
     transform: scale(1.15);
     opacity: 0.8;
 }
+
+@media (max-width: 768px) {
+    #socials {
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-list {
+        gap: 1.2rem;
+    }
+
+    .social-list img {
+        width: 28px;
+        height: 28px;
+    }
+}
+@media (max-width: 480px) {
+    .social-list {
+        gap: 1rem;
+    }
+
+    .social-list img {
+        width: 28px;
+        height: 28px;
+    }
+}
